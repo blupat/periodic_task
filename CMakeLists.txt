@@ -205,3 +205,12 @@ add_executable(periodic_task_node
 target_link_libraries(periodic_task_node ${catkin_LIBRARIES} rt)
 
 add_dependencies(periodic_task_node periodic_task_generate_messages_cpp)
+
+install(TARGETS ${PROJECT_NAME}_node
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+  PATTERN ".svn" EXCLUDE)
